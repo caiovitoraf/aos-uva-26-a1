@@ -1,0 +1,33 @@
+COMANDO: python -m unittest discover -s tests -v
+
+test_textos_tamanho_e_consistencia (test_projeto.TestBaseEntregue.test_textos_tamanho_e_consistencia) ... ok
+test_arquivo_vazio_e_codificacao_invalida (test_projeto.TestIndice.test_arquivo_vazio_e_codificacao_invalida) ... ok
+test_erro_de_leitura_nao_interrompe_demais_documentos (test_projeto.TestIndice.test_erro_de_leitura_nao_interrompe_demais_documentos) ... ok
+test_estatisticas_e_todos_termos_na_trie (test_projeto.TestIndice.test_estatisticas_e_todos_termos_na_trie) ... ok
+test_exata_documentos_sem_repeticoes (test_projeto.TestIndice.test_exata_documentos_sem_repeticoes) ... ok
+test_insercao_autocomplete_nao_contamina_documentos (test_projeto.TestIndice.test_insercao_autocomplete_nao_contamina_documentos) ... ok
+test_novo_arquivo_na_proxima_execucao_e_pasta_nao_recursiva (test_projeto.TestIndice.test_novo_arquivo_na_proxima_execucao_e_pasta_nao_recursiva) ... ok
+test_pasta_vazia_e_inexistente (test_projeto.TestIndice.test_pasta_vazia_e_inexistente) ... ok
+test_prefixo_integra_trie_e_hash (test_projeto.TestIndice.test_prefixo_integra_trie_e_hash) ... ok
+test_autocomplete_insercao_consultas_e_entradas_invalidas (test_projeto.TestInterface.test_autocomplete_insercao_consultas_e_entradas_invalidas) ... ok
+test_carregamento_palavras_iniciais_inexistentes (test_projeto.TestInterface.test_carregamento_palavras_iniciais_inexistentes) ... ok
+test_eof_encerra_sem_traceback (test_projeto.TestInterface.test_eof_encerra_sem_traceback) ... ok
+test_menu_documentos_consultas_listagem_estatisticas (test_projeto.TestInterface.test_menu_documentos_consultas_listagem_estatisticas) ... ok
+test_programa_completo_iniciado_de_outro_diretorio (test_projeto.TestInterface.test_programa_completo_iniciado_de_outro_diretorio) ... ok
+test_stopwords_ausentes_falha_clara (test_projeto.TestInterface.test_stopwords_ausentes_falha_clara) ... ok
+test_consulta_unica_e_stopwords (test_projeto.TestPreprocessamento.test_consulta_unica_e_stopwords) ... ok
+test_exemplo_enunciado_e_duas_contagens (test_projeto.TestPreprocessamento.test_exemplo_enunciado_e_duas_contagens) ... ok
+test_lista_stopwords_editavel_e_validada (test_projeto.TestPreprocessamento.test_lista_stopwords_editavel_e_validada) ... ok
+test_pontuacao_e_simbolos_nao_juntam_palavras (test_projeto.TestPreprocessamento.test_pontuacao_e_simbolos_nao_juntam_palavras) ... ok
+test_unicode_equivalente_e_acentos_preservados (test_projeto.TestPreprocessamento.test_unicode_equivalente_e_acentos_preservados) ... ok
+test_busca_exata_distingue_prefixo_e_fim (test_projeto.TestTrie.test_busca_exata_distingue_prefixo_e_fim) ... ok
+test_caminho_longo_sem_recursao (test_projeto.TestTrie.test_caminho_longo_sem_recursao) ... ok
+test_duplicatas_e_insercao_posterior (test_projeto.TestTrie.test_duplicatas_e_insercao_posterior) ... ok
+test_prefixo_inclui_palavra_completa_e_descendentes (test_projeto.TestTrie.test_prefixo_inclui_palavra_completa_e_descendentes) ... ok
+test_resultados_conferidos_com_filtro_de_referencia (test_projeto.TestTrie.test_resultados_conferidos_com_filtro_de_referencia) ... ok
+test_vazios_rejeitados_e_acentos_distintos (test_projeto.TestTrie.test_vazios_rejeitados_e_acentos_distintos) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.240s
+
+OK

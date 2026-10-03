@@ -1,0 +1,791 @@
+{
+  "python": "3.12.14",
+  "sistema": "Windows",
+  "repeticoes": 15,
+  "metodo": "Um aquecimento por subconjunto; mediana de execuções; consultas sem impressão; leitura fora dos tempos de construção.",
+  "sha256_documentos": {
+    "algoritmos.txt": "81db4792d760b813f51f0afd9dfb892ff53b62c281dde8de6089bab412bdf0c7",
+    "banco_dados.txt": "9dfdc584a2fe06ae9b337e2960041d8090978fad6c043253e890847d06aa8c49",
+    "engenharia_software.txt": "ec4a53ed60f68f05b09d746d174f8bfdb9de750d5ef884f51c542014cb823e3c",
+    "inteligencia_artificial.txt": "c15e3c9264fbc416dd04371a61f28d388edde13276944855cc1203d348b38017",
+    "redes.txt": "aa23a4c150f5a1378bc1ce723fec77521fc25d0442d730ee2de17a74dbf2d34a"
+  },
+  "sha256_stopwords": "0c597d10b213c7b230b4caa5297aaa7d6ec81af969093ef8c0e13d236f7b2f0c",
+  "documentos": [
+    {
+      "nome": "algoritmos.txt",
+      "tokens": 752,
+      "tokens_sem_stopwords": 490
+    },
+    {
+      "nome": "banco_dados.txt",
+      "tokens": 781,
+      "tokens_sem_stopwords": 514
+    },
+    {
+      "nome": "engenharia_software.txt",
+      "tokens": 779,
+      "tokens_sem_stopwords": 494
+    },
+    {
+      "nome": "inteligencia_artificial.txt",
+      "tokens": 767,
+      "tokens_sem_stopwords": 498
+    },
+    {
+      "nome": "redes.txt",
+      "tokens": 771,
+      "tokens_sem_stopwords": 492
+    }
+  ],
+  "subconjuntos": [
+    {
+      "arquivos": [
+        "algoritmos.txt"
+      ],
+      "contagens": {
+        "documentos": 1,
+        "tokens": 752,
+        "tokens_sem_stopwords": 490,
+        "termos_distintos": 342,
+        "palavras_trie": 342
+      },
+      "medianas_ms": {
+        "tempo_preprocessamento": 0.4542999995464925,
+        "tempo_indice": 0.06940000002941815,
+        "tempo_trie": 0.5473999999594525,
+        "consulta_dados": 0.0015000005078036338,
+        "consulta_comp": 0.027299999601382297
+      },
+      "amostras": [
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00047670000003563473,
+          "tempo_indice_s": 0.00010679999923013384,
+          "tempo_trie_s": 0.0006260000000111177,
+          "consulta_dados_s": 2.499999936844688e-06,
+          "consulta_comp_s": 4.310000076657161e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00047670000003563473,
+          "tempo_indice_s": 0.0001238999993802281,
+          "tempo_trie_s": 0.0009930999995049206,
+          "consulta_dados_s": 1.7999991541728377e-06,
+          "consulta_comp_s": 2.8899999961140566e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00045429999954649247,
+          "tempo_indice_s": 7.480000022042077e-05,
+          "tempo_trie_s": 0.0005205000006753835,
+          "consulta_dados_s": 1.6999993022182025e-06,
+          "consulta_comp_s": 2.8100000236008782e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00048489999971934594,
+          "tempo_indice_s": 7.139999979699496e-05,
+          "tempo_trie_s": 0.0005473999999594525,
+          "consulta_dados_s": 1.7999991541728377e-06,
+          "consulta_comp_s": 2.7299999601382297e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00047730000005685724,
+          "tempo_indice_s": 6.920000032550888e-05,
+          "tempo_trie_s": 0.0006694000003335532,
+          "consulta_dados_s": 1.600000359758269e-06,
+          "consulta_comp_s": 2.6900000193563756e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00045000000045547495,
+          "tempo_indice_s": 6.930000017746352e-05,
+          "tempo_trie_s": 0.000515800000357558,
+          "consulta_dados_s": 1.5000005078036338e-06,
+          "consulta_comp_s": 2.6700000489654485e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00044750000051863026,
+          "tempo_indice_s": 6.909999956405954e-05,
+          "tempo_trie_s": 0.00071010000010574,
+          "consulta_dados_s": 1.499999598308932e-06,
+          "consulta_comp_s": 2.6900000193563756e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00045360000058281,
+          "tempo_indice_s": 6.850000045233173e-05,
+          "tempo_trie_s": 0.0005132999995112186,
+          "consulta_dados_s": 1.2999998943996616e-06,
+          "consulta_comp_s": 2.6500000785745215e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00044919999982084846,
+          "tempo_indice_s": 6.850000045233173e-05,
+          "tempo_trie_s": 0.0005075999997643521,
+          "consulta_dados_s": 1.7000002117129043e-06,
+          "consulta_comp_s": 4.11000000895001e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.0004969999999957508,
+          "tempo_indice_s": 6.919999941601418e-05,
+          "tempo_trie_s": 0.0006441999994422076,
+          "consulta_dados_s": 1.3999997463542968e-06,
+          "consulta_comp_s": 2.7299999601382297e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.0004347000003690482,
+          "tempo_indice_s": 6.979999943723669e-05,
+          "tempo_trie_s": 0.0005376999997679377,
+          "consulta_dados_s": 1.2999998943996616e-06,
+          "consulta_comp_s": 2.7799999770650174e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00044320000051811803,
+          "tempo_indice_s": 6.940000002941815e-05,
+          "tempo_trie_s": 0.0006870000006529153,
+          "consulta_dados_s": 1.3999997463542968e-06,
+          "consulta_comp_s": 2.7099999897473026e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.0004581000002872315,
+          "tempo_indice_s": 8.060000072873663e-05,
+          "tempo_trie_s": 0.0005159000002095127,
+          "consulta_dados_s": 1.3999997463542968e-06,
+          "consulta_comp_s": 2.8299999939918052e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00045589999990625074,
+          "tempo_indice_s": 6.960000064282212e-05,
+          "tempo_trie_s": 0.0007708000002821791,
+          "consulta_dados_s": 1.5000005078036338e-06,
+          "consulta_comp_s": 2.7299999601382297e-05
+        },
+        {
+          "documentos": 1,
+          "tokens": 752,
+          "tokens_sem_stopwords": 490,
+          "termos_distintos": 342,
+          "palavras_trie": 342,
+          "tempo_preprocessamento_s": 0.00043819999973493395,
+          "tempo_indice_s": 6.880000000819564e-05,
+          "tempo_trie_s": 0.0005248999996183557,
+          "consulta_dados_s": 1.2000000424450263e-06,
+          "consulta_comp_s": 2.719999974942766e-05
+        }
+      ]
+    },
+    {
+      "arquivos": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt"
+      ],
+      "contagens": {
+        "documentos": 3,
+        "tokens": 2312,
+        "tokens_sem_stopwords": 1498,
+        "termos_distintos": 727,
+        "palavras_trie": 727
+      },
+      "medianas_ms": {
+        "tempo_preprocessamento": 1.3791999999739346,
+        "tempo_indice": 0.26529999922786374,
+        "tempo_trie": 1.3030000000071595,
+        "consulta_dados": 0.0018999999156221747,
+        "consulta_comp": 0.03879999985656468
+      },
+      "amostras": [
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013834000001224922,
+          "tempo_indice_s": 0.00028529999872262124,
+          "tempo_trie_s": 0.001205399999889778,
+          "consulta_dados_s": 2.0000006770715117e-06,
+          "consulta_comp_s": 3.980000019510044e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.001394399999298912,
+          "tempo_indice_s": 0.0006413000010070391,
+          "tempo_trie_s": 0.001089499999579857,
+          "consulta_dados_s": 1.99999976757681e-06,
+          "consulta_comp_s": 4.000000080850441e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.001359500000035041,
+          "tempo_indice_s": 0.00026330000127927633,
+          "tempo_trie_s": 0.004173399999672256,
+          "consulta_dados_s": 2.8000004022032954e-06,
+          "consulta_comp_s": 3.860000015265541e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013791999999739346,
+          "tempo_indice_s": 0.00027210000007471535,
+          "tempo_trie_s": 0.0012695999994321028,
+          "consulta_dados_s": 1.6999993022182025e-06,
+          "consulta_comp_s": 3.749999996216502e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0014345000008688658,
+          "tempo_indice_s": 0.00026760000037029386,
+          "tempo_trie_s": 0.0010178000002269982,
+          "consulta_dados_s": 2.499999936844688e-06,
+          "consulta_comp_s": 3.9000000469968654e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013791999999739346,
+          "tempo_indice_s": 0.0002778999996735365,
+          "tempo_trie_s": 0.0013132000003679423,
+          "consulta_dados_s": 1.8000000636675395e-06,
+          "consulta_comp_s": 3.980000019510044e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013878999998269137,
+          "tempo_indice_s": 0.00026450000041222665,
+          "tempo_trie_s": 0.0014171000002534129,
+          "consulta_dados_s": 2.2999993234407157e-06,
+          "consulta_comp_s": 3.879999985656468e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013732999996136641,
+          "tempo_indice_s": 0.0002694000004339614,
+          "tempo_trie_s": 0.0013030000000071595,
+          "consulta_dados_s": 1.8999999156221747e-06,
+          "consulta_comp_s": 3.910000032192329e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013756999996985542,
+          "tempo_indice_s": 0.0002641000000949134,
+          "tempo_trie_s": 0.000999500000034459,
+          "consulta_dados_s": 2.599999788799323e-06,
+          "consulta_comp_s": 4.259999968780903e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013791999999739346,
+          "tempo_indice_s": 0.0002647000001161359,
+          "tempo_trie_s": 0.001297099999646889,
+          "consulta_dados_s": 1.600000359758269e-06,
+          "consulta_comp_s": 3.860000015265541e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0014019000000189408,
+          "tempo_indice_s": 0.00026499999967199983,
+          "tempo_trie_s": 0.0013330000001587905,
+          "consulta_dados_s": 1.600000359758269e-06,
+          "consulta_comp_s": 3.870000000461005e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013557000002037967,
+          "tempo_indice_s": 0.00026869999874179484,
+          "tempo_trie_s": 0.0013226000000940985,
+          "consulta_dados_s": 1.499999598308932e-06,
+          "consulta_comp_s": 3.8499999391206075e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.001364399999147281,
+          "tempo_indice_s": 0.00026529999922786374,
+          "tempo_trie_s": 0.0009939999999915017,
+          "consulta_dados_s": 1.7000002117129043e-06,
+          "consulta_comp_s": 3.729999934876105e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.0013780999997834442,
+          "tempo_indice_s": 0.0002620999994178419,
+          "tempo_trie_s": 0.0013599999992948142,
+          "consulta_dados_s": 1.8999999156221747e-06,
+          "consulta_comp_s": 3.999999989900971e-05
+        },
+        {
+          "documentos": 3,
+          "tokens": 2312,
+          "tokens_sem_stopwords": 1498,
+          "termos_distintos": 727,
+          "palavras_trie": 727,
+          "tempo_preprocessamento_s": 0.001366299999972398,
+          "tempo_indice_s": 0.0002640999991854187,
+          "tempo_trie_s": 0.0013240999996924074,
+          "consulta_dados_s": 1.8000000636675395e-06,
+          "consulta_comp_s": 3.8099999983387534e-05
+        }
+      ]
+    },
+    {
+      "arquivos": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "contagens": {
+        "documentos": 5,
+        "tokens": 3850,
+        "tokens_sem_stopwords": 2488,
+        "termos_distintos": 1022,
+        "palavras_trie": 1022
+      },
+      "medianas_ms": {
+        "tempo_preprocessamento": 2.348199998778,
+        "tempo_indice": 0.4456000006030081,
+        "tempo_trie": 2.065200000288314,
+        "consulta_dados": 0.003099999958067201,
+        "consulta_comp": 0.056999999287654646
+      },
+      "amostras": [
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0023713999999017688,
+          "tempo_indice_s": 0.00044749999960913556,
+          "tempo_trie_s": 0.006079699999645527,
+          "consulta_dados_s": 3.5000002753804438e-06,
+          "consulta_comp_s": 5.790000068373047e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.00232039999900735,
+          "tempo_indice_s": 0.00044040000193490414,
+          "tempo_trie_s": 0.002065200000288314,
+          "consulta_dados_s": 3.099999958067201e-06,
+          "consulta_comp_s": 5.380000038712751e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.00230089999968186,
+          "tempo_indice_s": 0.0004376999986561714,
+          "tempo_trie_s": 0.0020090999996682513,
+          "consulta_dados_s": 3.3999995139311068e-06,
+          "consulta_comp_s": 5.7499999456922524e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0024224000007961877,
+          "tempo_indice_s": 0.00047900000026857015,
+          "tempo_trie_s": 0.0020584000003509573,
+          "consulta_dados_s": 2.6999996407539584e-06,
+          "consulta_comp_s": 5.259999943518778e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0023090999993655714,
+          "tempo_indice_s": 0.0004326999996919767,
+          "tempo_trie_s": 0.001930999999785854,
+          "consulta_dados_s": 3.3999995139311068e-06,
+          "consulta_comp_s": 5.380000038712751e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.002378500001213979,
+          "tempo_indice_s": 0.000499300001138181,
+          "tempo_trie_s": 0.0020789999998669373,
+          "consulta_dados_s": 2.9000002541579306e-06,
+          "consulta_comp_s": 6.100000064179767e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0023074000000633532,
+          "tempo_indice_s": 0.0004493000014917925,
+          "tempo_trie_s": 0.0018198999996457133,
+          "consulta_dados_s": 2.100000529026147e-06,
+          "consulta_comp_s": 4.979999994247919e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0022872999988976517,
+          "tempo_indice_s": 0.00041740000051504467,
+          "tempo_trie_s": 0.00178070000038133,
+          "consulta_dados_s": 2.70000055024866e-06,
+          "consulta_comp_s": 5.2800000048591755e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.002371200001107354,
+          "tempo_indice_s": 0.00043450000157463364,
+          "tempo_trie_s": 0.002297500000167929,
+          "consulta_dados_s": 3.5000002753804438e-06,
+          "consulta_comp_s": 5.7300000662507955e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0024009000007936265,
+          "tempo_indice_s": 0.00048129999868251616,
+          "tempo_trie_s": 0.002277699999467586,
+          "consulta_dados_s": 3.099999958067201e-06,
+          "consulta_comp_s": 5.740000051446259e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0023455000000467408,
+          "tempo_indice_s": 0.0004456000006030081,
+          "tempo_trie_s": 0.0022674000001643435,
+          "consulta_dados_s": 3.4000004234258085e-06,
+          "consulta_comp_s": 6.499999926745659e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.002410000000963919,
+          "tempo_indice_s": 0.0004672999993999838,
+          "tempo_trie_s": 0.0072147999999288,
+          "consulta_dados_s": 3.7999998312443495e-06,
+          "consulta_comp_s": 5.6999999287654646e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0026774999996632687,
+          "tempo_indice_s": 0.000607799999670533,
+          "tempo_trie_s": 0.002101800000673393,
+          "consulta_dados_s": 2.599999788799323e-06,
+          "consulta_comp_s": 5.220000002736924e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.002348199998778,
+          "tempo_indice_s": 0.000444299998889619,
+          "tempo_trie_s": 0.001929500000187545,
+          "consulta_dados_s": 2.8000004022032954e-06,
+          "consulta_comp_s": 5.2800000048591755e-05
+        },
+        {
+          "documentos": 5,
+          "tokens": 3850,
+          "tokens_sem_stopwords": 2488,
+          "termos_distintos": 1022,
+          "palavras_trie": 1022,
+          "tempo_preprocessamento_s": 0.0022831999995105434,
+          "tempo_indice_s": 0.0004300999999031774,
+          "tempo_trie_s": 0.0018504999998185667,
+          "consulta_dados_s": 2.200000380980782e-06,
+          "consulta_comp_s": 6.089999988034833e-05
+        }
+      ]
+    }
+  ],
+  "exemplos": {
+    "dados": [
+      "algoritmos.txt",
+      "banco_dados.txt",
+      "engenharia_software.txt",
+      "inteligencia_artificial.txt",
+      "redes.txt"
+    ],
+    "pacotes": [
+      "redes.txt"
+    ],
+    "transação": [
+      "banco_dados.txt"
+    ],
+    "computação": [
+      "algoritmos.txt",
+      "banco_dados.txt",
+      "engenharia_software.txt",
+      "inteligencia_artificial.txt",
+      "redes.txt"
+    ],
+    "computacao": [
+      "algoritmos.txt",
+      "inteligencia_artificial.txt",
+      "redes.txt"
+    ],
+    "zzzinexistente": [],
+    "prefixo_comp": {
+      "comp": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "compara": [
+        "banco_dados.txt"
+      ],
+      "comparamos": [
+        "engenharia_software.txt"
+      ],
+      "comparar": [
+        "redes.txt"
+      ],
+      "comparação": [
+        "banco_dados.txt"
+      ],
+      "comparações": [
+        "algoritmos.txt",
+        "engenharia_software.txt"
+      ],
+      "compartilham": [
+        "algoritmos.txt",
+        "banco_dados.txt"
+      ],
+      "compartilhar": [
+        "engenharia_software.txt",
+        "redes.txt"
+      ],
+      "compartilhem": [
+        "inteligencia_artificial.txt"
+      ],
+      "compatíveis": [
+        "inteligencia_artificial.txt"
+      ],
+      "compilador": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "complementam": [
+        "algoritmos.txt"
+      ],
+      "completa": [
+        "algoritmos.txt",
+        "engenharia_software.txt"
+      ],
+      "completo": [
+        "redes.txt"
+      ],
+      "complexidade": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "complexidades": [
+        "engenharia_software.txt"
+      ],
+      "componentes": [
+        "redes.txt"
+      ],
+      "comportamento": [
+        "algoritmos.txt",
+        "redes.txt"
+      ],
+      "composta": [
+        "banco_dados.txt"
+      ],
+      "compreensão": [
+        "engenharia_software.txt"
+      ],
+      "compreensíveis": [
+        "redes.txt"
+      ],
+      "computacao": [
+        "algoritmos.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "computacional": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "computador": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "computadores": [
+        "redes.txt"
+      ],
+      "computação": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ]
+    }
+  }
+}

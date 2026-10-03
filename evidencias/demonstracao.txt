@@ -1,0 +1,191 @@
+ENTRADAS, UMA POR LINHA:
+1
+2
+comp
+3
+programável
+1
+PROGRAMÁVEL
+3
+programável
+1
+prog
+4
+2
+1
+pacotes
+1
+transação
+1
+zzzinexistente
+2
+comp
+3
+4
+5
+3
+
+SAÍDA REAL DO PROGRAMA:
+
+TRABALHO A1 — CAIO E MARIA
+1 - Autocomplete (Parte I)
+2 - Busca em documentos (Parte II)
+3 - Sair
+Escolha: 
+AUTOCOMPLETE COM TRIE — 26 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: Digite a palavra ou prefixo: Palavras encontradas:
+- compilador
+- complexidade
+- computacional
+- computador
+- computação
+Tempo da consulta: 0.024900 ms
+
+AUTOCOMPLETE COM TRIE — 26 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: Digite a palavra ou prefixo: Palavra inserida.
+
+AUTOCOMPLETE COM TRIE — 27 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: Digite a palavra ou prefixo: Palavra encontrada.
+Tempo da consulta: 0.002300 ms
+
+AUTOCOMPLETE COM TRIE — 27 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: Digite a palavra ou prefixo: A palavra já estava cadastrada.
+
+AUTOCOMPLETE COM TRIE — 27 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: Digite a palavra ou prefixo: Palavra não encontrada.
+Tempo da consulta: 0.001300 ms
+
+AUTOCOMPLETE COM TRIE — 27 palavras
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Inserir palavra
+4 - Voltar
+Escolha: 
+TRABALHO A1 — CAIO E MARIA
+1 - Autocomplete (Parte I)
+2 - Busca em documentos (Parte II)
+3 - Sair
+Escolha: 
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: Digite a palavra ou prefixo: Encontrada em 1 arquivo(s):
+- redes.txt
+Tempo da consulta: 0.003100 ms
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: Digite a palavra ou prefixo: Encontrada em 1 arquivo(s):
+- banco_dados.txt
+Tempo da consulta: 0.001800 ms
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: Digite a palavra ou prefixo: Nenhum resultado encontrado.
+Tempo da consulta: 0.000800 ms
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: Digite a palavra ou prefixo: Termos encontrados: 26
+- comp: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+- compara: banco_dados.txt
+- comparamos: engenharia_software.txt
+- comparar: redes.txt
+- comparação: banco_dados.txt
+- comparações: algoritmos.txt, engenharia_software.txt
+- compartilham: algoritmos.txt, banco_dados.txt
+- compartilhar: engenharia_software.txt, redes.txt
+- compartilhem: inteligencia_artificial.txt
+- compatíveis: inteligencia_artificial.txt
+- compilador: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+- complementam: algoritmos.txt
+- completa: algoritmos.txt, engenharia_software.txt
+- completo: redes.txt
+- complexidade: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+- complexidades: engenharia_software.txt
+- componentes: redes.txt
+- comportamento: algoritmos.txt, redes.txt
+- composta: banco_dados.txt
+- compreensão: engenharia_software.txt
+- compreensíveis: redes.txt
+- computacao: algoritmos.txt, inteligencia_artificial.txt, redes.txt
+- computacional: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+- computador: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+- computadores: redes.txt
+- computação: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
+Tempo da consulta: 0.059000 ms
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: - algoritmos.txt: 752 tokens; 490 sem stopwords
+- banco_dados.txt: 781 tokens; 514 sem stopwords
+- engenharia_software.txt: 779 tokens; 494 sem stopwords
+- inteligencia_artificial.txt: 767 tokens; 498 sem stopwords
+- redes.txt: 771 tokens; 492 sem stopwords
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: Documentos processados: 5
+Palavras após tokenização, antes das stopwords: 3850
+Palavras após remoção de stopwords: 2488
+Termos distintos: 1022
+Palavras armazenadas na Trie: 1022
+Pré-processamento: 2.557800 ms
+Construção da Trie: 2.559400 ms
+Construção do índice invertido: 0.580900 ms
+
+BUSCA EM DOCUMENTOS — 5 documentos
+1 - Buscar palavra
+2 - Buscar por prefixo
+3 - Listar documentos
+4 - Estatísticas
+5 - Voltar
+Escolha: 
+TRABALHO A1 — CAIO E MARIA
+1 - Autocomplete (Parte I)
+2 - Busca em documentos (Parte II)
+3 - Sair
+Escolha: Programa encerrado.

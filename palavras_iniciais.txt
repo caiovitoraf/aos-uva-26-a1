@@ -1,0 +1,27 @@
+# Vocabulário inicial da Parte I; uma palavra por linha.
+algoritmo
+algoritmos
+busca
+compilador
+complexidade
+computação
+computacional
+computador
+dados
+desenvolvimento
+estrutura
+estruturas
+hash
+índice
+indexação
+memória
+processador
+processamento
+programa
+programação
+programador
+programar
+rede
+redes
+texto
+trie
