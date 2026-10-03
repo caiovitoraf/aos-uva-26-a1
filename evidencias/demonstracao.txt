@@ -28,100 +28,137 @@ comp
 SAÍDA REAL DO PROGRAMA:
 
 TRABALHO A1 — CAIO E MARIA
-1 - Autocomplete (Parte I)
-2 - Busca em documentos (Parte II)
-3 - Sair
+1 - Parte I: demonstração de autocomplete
+2 - Parte II: pesquisa nos documentos
+3 - Encerrar o programa
 Escolha: 
-AUTOCOMPLETE COM TRIE — 26 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
-Escolha: Digite a palavra ou prefixo: Palavras encontradas:
+Aqui você testa sugestões usando um cadastro próprio de palavras.
+Novas palavras ficam neste cadastro durante a sessão; elas não alteram os textos.
+
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 26 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
+Escolha: Digite o começo da palavra (prefixo), por exemplo prog: Sugestões do cadastro:
 - compilador
 - complexidade
 - computacional
 - computador
 - computação
-Tempo da consulta: 0.024900 ms
+Tempo da consulta: 0.032500 ms
+Passos contados (operações selecionadas): 134
+  - Caracteres do caminho examinados: 4
+  - Finais de palavra verificados: 30
+  - Nós descendentes visitados: 29
+  - Palavras recuperadas: 5
+  - Caracteres copiados para sugestões: 55
+  - Comparações entre textos na ordenação: 11
 
-AUTOCOMPLETE COM TRIE — 26 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
-Escolha: Digite a palavra ou prefixo: Palavra inserida.
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 26 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
+Escolha: Digite a nova palavra para cadastrar nesta sessão: Palavra inserida no cadastro desta sessão.
+Tempo da inserção: 0.005300 ms
+Passos contados (operações selecionadas): 17
+  - Caracteres da palavra examinados: 11
+  - Nós criados: 4
+  - Finais de palavra verificados: 1
+  - Palavras cadastradas: 1
 
-AUTOCOMPLETE COM TRIE — 27 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
-Escolha: Digite a palavra ou prefixo: Palavra encontrada.
-Tempo da consulta: 0.002300 ms
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 27 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
+Escolha: Digite a palavra inteira que deseja verificar: Palavra encontrada no cadastro.
+Tempo da consulta: 0.003100 ms
+Passos contados (operações selecionadas): 12
+  - Caracteres do caminho examinados: 11
+  - Finais de palavra verificados: 1
 
-AUTOCOMPLETE COM TRIE — 27 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
-Escolha: Digite a palavra ou prefixo: A palavra já estava cadastrada.
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 27 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
+Escolha: Digite a nova palavra para cadastrar nesta sessão: A palavra já estava cadastrada.
+Tempo da inserção: 0.002500 ms
+Passos contados (operações selecionadas): 12
+  - Caracteres da palavra examinados: 11
+  - Finais de palavra verificados: 1
 
-AUTOCOMPLETE COM TRIE — 27 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
-Escolha: Digite a palavra ou prefixo: Palavra não encontrada.
-Tempo da consulta: 0.001300 ms
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 27 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
+Escolha: Digite a palavra inteira que deseja verificar: Palavra não encontrada no cadastro.
+Tempo da consulta: 0.001800 ms
+Passos contados (operações selecionadas): 5
+  - Caracteres do caminho examinados: 4
+  - Finais de palavra verificados: 1
 
-AUTOCOMPLETE COM TRIE — 27 palavras
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Inserir palavra
-4 - Voltar
+PARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — 27 palavras cadastradas
+1 - Verificar se uma palavra está cadastrada
+2 - Ver sugestões pelo começo da palavra
+3 - Cadastrar palavra para testar o autocomplete
+4 - Voltar ao menu principal
 Escolha: 
 TRABALHO A1 — CAIO E MARIA
-1 - Autocomplete (Parte I)
-2 - Busca em documentos (Parte II)
-3 - Sair
+1 - Parte I: demonstração de autocomplete
+2 - Parte II: pesquisa nos documentos
+3 - Encerrar o programa
 Escolha: 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
-Escolha: Digite a palavra ou prefixo: Encontrada em 1 arquivo(s):
+Aqui você pesquisa as palavras extraídas dos arquivos da pasta documentos/.
+Cada resultado mostra os arquivos em que a palavra aparece.
+
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
+Escolha: Digite a palavra inteira que deseja encontrar nos textos: Encontrada em 1 arquivo(s):
 - redes.txt
-Tempo da consulta: 0.003100 ms
+Tempo da consulta: 0.003800 ms
+Passos contados (operações selecionadas): 2
+  - Consultas ao índice Hash: 1
+  - Documentos recuperados: 1
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
-Escolha: Digite a palavra ou prefixo: Encontrada em 1 arquivo(s):
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
+Escolha: Digite a palavra inteira que deseja encontrar nos textos: Encontrada em 1 arquivo(s):
 - banco_dados.txt
-Tempo da consulta: 0.001800 ms
+Tempo da consulta: 0.002600 ms
+Passos contados (operações selecionadas): 2
+  - Consultas ao índice Hash: 1
+  - Documentos recuperados: 1
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
-Escolha: Digite a palavra ou prefixo: Nenhum resultado encontrado.
-Tempo da consulta: 0.000800 ms
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
+Escolha: Digite a palavra inteira que deseja encontrar nos textos: Nenhum resultado encontrado.
+Tempo da consulta: 0.001600 ms
+Passos contados (operações selecionadas): 1
+  - Consultas ao índice Hash: 1
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
-Escolha: Digite a palavra ou prefixo: Termos encontrados: 26
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
+Escolha: Digite o começo da palavra (prefixo), por exemplo comp: Palavras dos textos que começam com 'comp': 26
 - comp: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
 - compara: banco_dados.txt
 - comparamos: engenharia_software.txt
@@ -148,44 +185,53 @@ Escolha: Digite a palavra ou prefixo: Termos encontrados: 26
 - computador: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
 - computadores: redes.txt
 - computação: algoritmos.txt, banco_dados.txt, engenharia_software.txt, inteligencia_artificial.txt, redes.txt
-Tempo da consulta: 0.059000 ms
+Tempo da consulta: 0.118700 ms
+Passos contados (operações selecionadas): 784
+  - Caracteres do caminho examinados: 4
+  - Finais de palavra verificados: 102
+  - Palavras recuperadas: 26
+  - Nós descendentes visitados: 101
+  - Caracteres copiados para sugestões: 268
+  - Comparações entre textos na ordenação: 200
+  - Consultas ao índice Hash: 26
+  - Documentos recuperados: 57
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
 Escolha: - algoritmos.txt: 752 tokens; 490 sem stopwords
 - banco_dados.txt: 781 tokens; 514 sem stopwords
 - engenharia_software.txt: 779 tokens; 494 sem stopwords
 - inteligencia_artificial.txt: 767 tokens; 498 sem stopwords
 - redes.txt: 771 tokens; 492 sem stopwords
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
 Escolha: Documentos processados: 5
 Palavras após tokenização, antes das stopwords: 3850
 Palavras após remoção de stopwords: 2488
 Termos distintos: 1022
 Palavras armazenadas na Trie: 1022
-Pré-processamento: 2.557800 ms
-Construção da Trie: 2.559400 ms
-Construção do índice invertido: 0.580900 ms
+Pré-processamento: 2.445700 ms
+Construção da Trie: 2.047000 ms
+Construção do índice invertido: 0.498500 ms
 
-BUSCA EM DOCUMENTOS — 5 documentos
-1 - Buscar palavra
-2 - Buscar por prefixo
-3 - Listar documentos
-4 - Estatísticas
-5 - Voltar
+PARTE II — BUSCA EM DOCUMENTOS — 5 arquivos carregados
+1 - Encontrar arquivos que contêm uma palavra
+2 - Encontrar palavras pelo começo e seus arquivos
+3 - Ver arquivos carregados
+4 - Ver contagens e tempos de processamento
+5 - Voltar ao menu principal
 Escolha: 
 TRABALHO A1 — CAIO E MARIA
-1 - Autocomplete (Parte I)
-2 - Busca em documentos (Parte II)
-3 - Sair
+1 - Parte I: demonstração de autocomplete
+2 - Parte II: pesquisa nos documentos
+3 - Encerrar o programa
 Escolha: Programa encerrado.

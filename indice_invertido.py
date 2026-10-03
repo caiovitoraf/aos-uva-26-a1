@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from time import perf_counter
 
+from metricas import ContadorPassos, ordenar_com_passos
 from preprocessamento import preprocessar
 from trie import Trie
 
@@ -70,11 +71,18 @@ class MecanismoBusca:
         mecanismo.avisos = avisos + mecanismo.avisos
         return mecanismo
 
-    def buscar_palavra(self, termo: str) -> list[str]:
-        return sorted(self.indice.get(termo, set()))
+    def buscar_palavra(self, termo: str, contador: ContadorPassos | None = None) -> list[str]:
+        if contador is not None:
+            contador.contar("Consultas ao índice Hash")
+        documentos = self.indice.get(termo, set())
+        if contador is not None:
+            contador.contar("Documentos recuperados", len(documentos))
+        return ordenar_com_passos(documentos, contador)
 
-    def buscar_prefixo(self, prefixo: str) -> dict[str, list[str]]:
-        return {termo: self.buscar_palavra(termo) for termo in self.trie.buscar_prefixo(prefixo)}
+    def buscar_prefixo(self, prefixo: str, contador: ContadorPassos | None = None) -> dict[str, list[str]]:
+        # O mesmo contador acumula o percurso da Trie e a recuperação no índice.
+        return {termo: self.buscar_palavra(termo, contador)
+                for termo in self.trie.buscar_prefixo(prefixo, contador)}
 
     def estatisticas(self) -> dict[str, int | float]:
         return {

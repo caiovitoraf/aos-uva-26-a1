@@ -22,11 +22,13 @@ Se o terminal apresentar problemas de acentuação, execute `python -X utf8 main
 
 O menu principal oferece:
 
-1. **Autocomplete:** busca exata, busca por prefixo, inserção de uma palavra e retorno ao menu principal.
-2. **Busca em documentos:** busca exata, busca por prefixo, listagem de documentos, estatísticas e retorno ao menu principal.
-3. **Sair.**
+1. **Parte I: demonstração de autocomplete.** Permite verificar se uma palavra está cadastrada, ver sugestões pelo começo da palavra e cadastrar uma nova palavra para testar. O cadastro inicia com `palavras_iniciais.txt`; novas inserções valem durante a sessão.
+2. **Parte II: pesquisa nos documentos.** Permite encontrar arquivos que contêm uma palavra, encontrar palavras pelo começo e seus respectivos arquivos, ver arquivos carregados e consultar contagens e tempos de processamento. As palavras vêm dos textos de `documentos/`.
+3. **Encerrar o programa.** Dentro de cada parte, a opção **Voltar ao menu principal** permite escolher outra parte sem encerrar a sessão.
 
-As duas partes estão disponíveis na mesma aplicação e compartilham a implementação da Trie, com instâncias independentes.
+**Por que cadastrar uma palavra na Parte I?** Essa parte demonstra o autocomplete exigido pelo trabalho. Ao cadastrar `programável`, digitar o começo `prog` passa a incluí-la nas sugestões. Isso não acrescenta a palavra aos textos: a Parte II encontra `programável` somente se ela estiver em algum arquivo. As duas partes compartilham a implementação da Trie, com instâncias independentes.
+
+**Palavra inteira ou começo?** Verificar `programação` procura exatamente essa palavra. Informar `prog` como começo (prefixo) retorna palavras maiores, como `programa`, `programador` e `programação`. Os campos de entrada indicam qual das duas formas deve ser digitada.
 
 ## Organização
 
@@ -36,14 +38,15 @@ a1-caio-maria/
 ├── trie.py                    # Nós, inserção e buscas da Trie
 ├── preprocessamento.py        # Unicode, tokens e stopwords
 ├── indice_invertido.py        # Leitura, Hash, vocabulário e integração
+├── metricas.py                 # Contador e ordenação com comparações contadas
 ├── experimento.py             # Medições com 1, 3 e 5 documentos
 ├── palavras_iniciais.txt       # Uma palavra por linha para a Parte I
 ├── stopwords.txt               # Lista editável, uma palavra por linha
 ├── documentos/                # Cinco textos originais sobre computação
-├── tests/test_projeto.py       # Testes automatizados
+├── tests/                     # Testes do projeto e das métricas
 ├── evidencias/medicoes.json    # Amostras, medianas, hashes e resultados
 ├── evidencias/demonstracao.txt # Entradas e saída real de uma sessão
-├── evidencias/testes.txt       # Resultado da execução dos 26 testes
+├── evidencias/testes.txt       # Resultado da execução dos 33 testes
 ├── README.md
 └── RELATORIO.md
 ```
@@ -77,6 +80,28 @@ Confira a sessão completa em [evidencias/demonstracao.txt](evidencias/demonstra
 
 Na base entregue, as estatísticas são: **5 documentos, 3.850 tokens antes das stopwords, 2.488 depois, 1.022 termos distintos e 1.022 palavras na Trie dos documentos**. Tempos variam a cada execução.
 
+## Contador de passos junto ao tempo
+
+Cada consulta e inserção feita pelos menus usa um contador novo. A tela apresenta o tempo, o total de **operações selecionadas** e o detalhamento. Por exemplo, buscar `dados` no cadastro percorre cinco caracteres e verifica uma marca de fim de palavra: **6 passos contados**.
+
+| Etapa contada | Unidade adotada |
+| --- | --- |
+| Caracteres da palavra/caminho examinados | Um por caractere tentado na Trie, inclusive a tentativa que falha |
+| Nós criados | Um por novo nó durante uma inserção |
+| Finais de palavra verificados | Um por marca de fim examinada |
+| Palavras cadastradas ou recuperadas | Um por cadastro novo ou sugestão obtida |
+| Nós descendentes visitados | Um por descendente explorado na busca por prefixo |
+| Caracteres copiados para sugestões | Um por caractere copiado ao montar uma nova string de resultado |
+| Consultas ao índice Hash | Um por chamada de acesso ao índice para um termo |
+| Documentos recuperados | Um por associação termo-documento retornada |
+| Comparações entre textos na ordenação | Uma por operação `<` ou `>` entre strings executada pelo comparador |
+
+O total soma unidades do modelo escolhido; não representa todas as instruções do Python nem ciclos de processador. A comparação entre strings conta como uma operação aqui, embora possa comparar vários caracteres internamente. Colisões, hashing e outros mecanismos internos de `dict`, alocações, controle da pilha, normalização da entrada e impressão não são contados. Na busca por prefixo, a mesma métrica acumula a Trie e os documentos de cada sugestão; um arquivo associado a duas palavras conta duas associações.
+
+O tempo mostrado nos menus inclui o trabalho do contador e do comparador instrumentado, mas exclui a digitação, a normalização e a impressão. Portanto, não é diretamente comparável ao tempo sem instrumentação. A API mantém o contador opcional; `experimento.py` continua medindo sem contador. As medianas originais do relatório estão identificadas como a execução anterior à inclusão da instrumentação.
+
+Uma busca exata que alcança todos os m caracteres na Trie conta `T_contado(m) = m + 1`: caracteres examinados e verificação final. Isso é um modelo de custo da busca, não uma fórmula de tempo em segundos. Uma falha antecipada conta apenas o caminho efetivamente tentado. Prefixos e resultados maiores acrescentam outras etapas. As comparações de ordenação podem variar com a ordem inicial de enumeração dos conjuntos e dos caminhos; não existe um total fixo universal para toda consulta do mesmo tamanho.
+
 ## Testes e medições
 
 ```console
@@ -86,7 +111,7 @@ python experimento.py --repeticoes 15
 
 Para usar o runtime local, substitua `python` pelo comando PowerShell do início, mantendo os argumentos. Não é necessário `pip install`.
 
-Os 26 testes verificam Trie, pré-processamento, consultas, contagens, arquivos vazios e ilegíveis, inclusão automática de documento, independência entre instâncias e navegação nos menus. O resultado da execução está em [evidencias/testes.txt](evidencias/testes.txt). Os textos também são conferidos quanto ao tamanho, entre 600 e 1.000 tokens cada. Execute os testes de referência antes de personalizar a base: algumas verificações descrevem os cinco textos entregues.
+Os 33 testes verificam Trie, pré-processamento, consultas, contagens, arquivos vazios e ilegíveis, inclusão automática de documento, independência entre instâncias e navegação nos menus. O resultado da execução está em [evidencias/testes.txt](evidencias/testes.txt). Os textos também são conferidos quanto ao tamanho, entre 600 e 1.000 tokens cada. Execute os testes de referência antes de personalizar a base: algumas verificações descrevem os cinco textos entregues.
 
 O experimento usa os primeiros 1, 3 e 5 arquivos em ordem de nome, faz um aquecimento e registra a mediana de 15 execuções por subconjunto. Os nomes são descobertos na pasta. A leitura e a apresentação ficam fora dos tempos de construção; as consultas incluem recuperação e ordenação, mas não a impressão. As amostras individuais e hashes SHA-256 das entradas são gravados em `evidencias/medicoes.json`, substituindo a medição anterior.
 
@@ -108,4 +133,4 @@ cd aos-uva-26-a1
 python main.py
 ```
 
-A publicação contém somente o projeto preparado para Caio e Maria. Enunciados, slides, cadernos e trabalhos de colegas não fazem parte deste repositório. No workspace original, `.publicacao/` guarda a cópia Git isolada usada para o envio e é ignorada pelo versionamento da pasta principal.
+A publicação contém somente o projeto preparado para Caio e Maria. Enunciados, slides, cadernos e trabalhos de colegas não fazem parte deste repositório. A pasta local `a1-caio-maria` é um repositório Git independente. Faça commits e pushes diretamente nela.

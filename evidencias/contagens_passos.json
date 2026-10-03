@@ -1,0 +1,264 @@
+{
+  "modelo": "Operações selecionadas; tempo inclui instrumentação; não inclui entrada, normalização ou impressão.",
+  "registros": [
+    {
+      "operacao": "Inserção em Trie vazia",
+      "entrada": "dados",
+      "resultado": true,
+      "parametros": {
+        "m": 5,
+        "u": 5,
+        "b": 1
+      },
+      "formula": "m + u + 1 + b",
+      "total_formula": 12,
+      "passos": 12,
+      "etapas": {
+        "Caracteres da palavra examinados": 5,
+        "Nós criados": 5,
+        "Finais de palavra verificados": 1,
+        "Palavras cadastradas": 1
+      },
+      "tempo_ms": 0.009299999874201603
+    },
+    {
+      "operacao": "Inserção duplicada",
+      "entrada": "dados",
+      "resultado": false,
+      "parametros": {
+        "m": 5,
+        "u": 0,
+        "b": 0
+      },
+      "formula": "m + u + 1 + b",
+      "total_formula": 6,
+      "passos": 6,
+      "etapas": {
+        "Caracteres da palavra examinados": 5,
+        "Finais de palavra verificados": 1
+      },
+      "tempo_ms": 0.0018999999156221747
+    },
+    {
+      "operacao": "Busca exata na Trie",
+      "entrada": "dados",
+      "resultado": true,
+      "parametros": {
+        "m": 5
+      },
+      "formula": "m + 1",
+      "total_formula": 6,
+      "passos": 6,
+      "etapas": {
+        "Caracteres do caminho examinados": 5,
+        "Finais de palavra verificados": 1
+      },
+      "tempo_ms": 0.0032999996619764715
+    },
+    {
+      "operacao": "Busca com falha antecipada",
+      "entrada": "dez",
+      "resultado": false,
+      "parametros": {
+        "r": 2
+      },
+      "formula": "r",
+      "total_formula": 2,
+      "passos": 2,
+      "etapas": {
+        "Caracteres do caminho examinados": 2
+      },
+      "tempo_ms": 0.0015999994502635673
+    },
+    {
+      "operacao": "Prefixo em Trie com dados e dança",
+      "entrada": "da",
+      "resultado": [
+        "dados",
+        "dança"
+      ],
+      "parametros": {
+        "p": 2,
+        "n": 6,
+        "k": 2,
+        "B": 10,
+        "q": 2
+      },
+      "formula": "p + 2*n + 1 + k + B + q",
+      "total_formula": 29,
+      "passos": 29,
+      "etapas": {
+        "Caracteres do caminho examinados": 2,
+        "Finais de palavra verificados": 7,
+        "Nós descendentes visitados": 6,
+        "Palavras recuperadas": 2,
+        "Caracteres copiados para sugestões": 10,
+        "Comparações entre textos na ordenação": 2
+      },
+      "tempo_ms": 0.016799998775240965
+    },
+    {
+      "operacao": "Busca exata nos documentos",
+      "entrada": "dados",
+      "resultado": [
+        "algoritmos.txt",
+        "banco_dados.txt",
+        "engenharia_software.txt",
+        "inteligencia_artificial.txt",
+        "redes.txt"
+      ],
+      "parametros": {
+        "d": 5,
+        "q_d": 13
+      },
+      "formula": "1 + d + q_d",
+      "total_formula": 19,
+      "passos": 19,
+      "etapas": {
+        "Consultas ao índice Hash": 1,
+        "Documentos recuperados": 5,
+        "Comparações entre textos na ordenação": 13
+      },
+      "tempo_ms": 0.022700000045006163
+    },
+    {
+      "operacao": "Prefixo nos documentos",
+      "entrada": "comp",
+      "resultado": {
+        "comp": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "compara": [
+          "banco_dados.txt"
+        ],
+        "comparamos": [
+          "engenharia_software.txt"
+        ],
+        "comparar": [
+          "redes.txt"
+        ],
+        "comparação": [
+          "banco_dados.txt"
+        ],
+        "comparações": [
+          "algoritmos.txt",
+          "engenharia_software.txt"
+        ],
+        "compartilham": [
+          "algoritmos.txt",
+          "banco_dados.txt"
+        ],
+        "compartilhar": [
+          "engenharia_software.txt",
+          "redes.txt"
+        ],
+        "compartilhem": [
+          "inteligencia_artificial.txt"
+        ],
+        "compatíveis": [
+          "inteligencia_artificial.txt"
+        ],
+        "compilador": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "complementam": [
+          "algoritmos.txt"
+        ],
+        "completa": [
+          "algoritmos.txt",
+          "engenharia_software.txt"
+        ],
+        "completo": [
+          "redes.txt"
+        ],
+        "complexidade": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "complexidades": [
+          "engenharia_software.txt"
+        ],
+        "componentes": [
+          "redes.txt"
+        ],
+        "comportamento": [
+          "algoritmos.txt",
+          "redes.txt"
+        ],
+        "composta": [
+          "banco_dados.txt"
+        ],
+        "compreensão": [
+          "engenharia_software.txt"
+        ],
+        "compreensíveis": [
+          "redes.txt"
+        ],
+        "computacao": [
+          "algoritmos.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "computacional": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "computador": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ],
+        "computadores": [
+          "redes.txt"
+        ],
+        "computação": [
+          "algoritmos.txt",
+          "banco_dados.txt",
+          "engenharia_software.txt",
+          "inteligencia_artificial.txt",
+          "redes.txt"
+        ]
+      },
+      "parametros": {
+        "p": 4,
+        "n": 101,
+        "k": 26,
+        "B": 268,
+        "q": 131,
+        "soma_d_i": 57,
+        "soma_q_i": 91,
+        "T_trie": 632
+      },
+      "formula": "T_trie + k + soma_d_i + soma_q_i",
+      "total_formula": 806,
+      "passos": 806,
+      "etapas": {
+        "Caracteres do caminho examinados": 4,
+        "Finais de palavra verificados": 102,
+        "Palavras recuperadas": 26,
+        "Nós descendentes visitados": 101,
+        "Caracteres copiados para sugestões": 268,
+        "Comparações entre textos na ordenação": 222,
+        "Consultas ao índice Hash": 26,
+        "Documentos recuperados": 57
+      },
+      "tempo_ms": 0.1281000004382804
+    }
+  ]
+}

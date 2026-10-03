@@ -1,5 +1,12 @@
 COMANDO: python -m unittest discover -s tests -v
 
+test_exata_cinco_caracteres_e_verificacao_final (test_metricas.TestContadorPassos.test_exata_cinco_caracteres_e_verificacao_final) ... ok
+test_falha_conta_so_caminho_tentado (test_metricas.TestContadorPassos.test_falha_conta_so_caminho_tentado) ... ok
+test_hash_conta_acesso_e_documentos_sem_simular_internos (test_metricas.TestContadorPassos.test_hash_conta_acesso_e_documentos_sem_simular_internos) ... ok
+test_insercao_nova_e_duplicata (test_metricas.TestContadorPassos.test_insercao_nova_e_duplicata) ... ok
+test_ordenacao_conta_comparacoes_reais (test_metricas.TestContadorPassos.test_ordenacao_conta_comparacoes_reais) ... ok
+test_prefixo_acumula_trie_e_hash_e_preserva_resultado (test_metricas.TestContadorPassos.test_prefixo_acumula_trie_e_hash_e_preserva_resultado) ... ok
+test_prefixo_conta_descendentes_e_strings_de_saida (test_metricas.TestContadorPassos.test_prefixo_conta_descendentes_e_strings_de_saida) ... ok
 test_textos_tamanho_e_consistencia (test_projeto.TestBaseEntregue.test_textos_tamanho_e_consistencia) ... ok
 test_arquivo_vazio_e_codificacao_invalida (test_projeto.TestIndice.test_arquivo_vazio_e_codificacao_invalida) ... ok
 test_erro_de_leitura_nao_interrompe_demais_documentos (test_projeto.TestIndice.test_erro_de_leitura_nao_interrompe_demais_documentos) ... ok
@@ -28,6 +35,6 @@ test_resultados_conferidos_com_filtro_de_referencia (test_projeto.TestTrie.test_
 test_vazios_rejeitados_e_acentos_distintos (test_projeto.TestTrie.test_vazios_rejeitados_e_acentos_distintos) ... ok
 
 ----------------------------------------------------------------------
-Ran 26 tests in 0.240s
+Ran 33 tests in 0.304s
 
 OK

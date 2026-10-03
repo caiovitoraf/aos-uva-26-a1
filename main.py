@@ -4,6 +4,7 @@ from pathlib import Path
 from time import perf_counter
 
 from indice_invertido import MecanismoBusca
+from metricas import ContadorPassos
 from preprocessamento import carregar_stopwords, normalizar_termo
 from trie import Trie
 
@@ -35,41 +36,51 @@ def carregar_autocomplete(caminho: Path) -> tuple[Trie, list[str]]:
     return trie, avisos
 
 
-def mostrar_tempo(inicio: float, fim: float) -> None:
-    print(f"Tempo da consulta: {(fim - inicio) * 1000:.6f} ms")
+def mostrar_medicao(inicio: float, fim: float, contador: ContadorPassos, operacao: str = "consulta") -> None:
+    print(f"Tempo da {operacao}: {(fim - inicio) * 1000:.6f} ms")
+    print(f"Passos contados (operações selecionadas): {contador.total}")
+    for etapa, quantidade in contador.etapas.items():
+        print(f"  - {etapa}: {quantidade}")
 
 
 def menu_autocomplete(trie: Trie) -> None:
+    print("\nAqui você testa sugestões usando um cadastro próprio de palavras.")
+    print("Novas palavras ficam neste cadastro durante a sessão; elas não alteram os textos.")
     while True:
-        print(f"\nAUTOCOMPLETE COM TRIE — {trie.quantidade_palavras} palavras")
-        print("1 - Buscar palavra\n2 - Buscar por prefixo\n3 - Inserir palavra\n4 - Voltar")
+        print(f"\nPARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — {trie.quantidade_palavras} palavras cadastradas")
+        print("1 - Verificar se uma palavra está cadastrada\n2 - Ver sugestões pelo começo da palavra\n3 - Cadastrar palavra para testar o autocomplete\n4 - Voltar ao menu principal")
         opcao = input("Escolha: ").strip()
         if opcao == "4":
             return
         if opcao not in {"1", "2", "3"}:
             print("Opção inválida.")
             continue
-        termo = ler_termo("Digite a palavra ou prefixo: ")
+        mensagens = {
+            "1": "Digite a palavra inteira que deseja verificar: ",
+            "2": "Digite o começo da palavra (prefixo), por exemplo prog: ",
+            "3": "Digite a nova palavra para cadastrar nesta sessão: ",
+        }
+        termo = ler_termo(mensagens[opcao])
         if termo is None:
             continue
+        contador = ContadorPassos()
         inicio = perf_counter()
         if opcao == "1":
-            resultado = trie.buscar(termo)
+            resultado = trie.buscar(termo, contador)
         elif opcao == "2":
-            resultado = trie.buscar_prefixo(termo)
+            resultado = trie.buscar_prefixo(termo, contador)
         else:
-            resultado = trie.inserir(termo)
+            resultado = trie.inserir(termo, contador)
         fim = perf_counter()
         if opcao == "1":
-            print("Palavra encontrada." if resultado else "Palavra não encontrada.")
+            print("Palavra encontrada no cadastro." if resultado else "Palavra não encontrada no cadastro.")
         elif opcao == "2":
-            print("Palavras encontradas:" if resultado else "Nenhuma palavra encontrada.")
+            print("Sugestões do cadastro:" if resultado else "Nenhuma palavra encontrada no cadastro com esse começo.")
             for palavra in resultado:
                 print(f"- {palavra}")
         else:
-            print("Palavra inserida." if resultado else "A palavra já estava cadastrada.")
-        if opcao in {"1", "2"}:
-            mostrar_tempo(inicio, fim)
+            print("Palavra inserida no cadastro desta sessão." if resultado else "A palavra já estava cadastrada.")
+        mostrar_medicao(inicio, fim, contador, "inserção" if opcao == "3" else "consulta")
 
 
 def mostrar_estatisticas(mecanismo: MecanismoBusca) -> None:
@@ -86,9 +97,11 @@ def mostrar_estatisticas(mecanismo: MecanismoBusca) -> None:
 
 
 def menu_documentos(mecanismo: MecanismoBusca, stopwords: set[str]) -> None:
+    print("\nAqui você pesquisa as palavras extraídas dos arquivos da pasta documentos/.")
+    print("Cada resultado mostra os arquivos em que a palavra aparece.")
     while True:
-        print(f"\nBUSCA EM DOCUMENTOS — {len(mecanismo.documentos)} documentos")
-        print("1 - Buscar palavra\n2 - Buscar por prefixo\n3 - Listar documentos\n4 - Estatísticas\n5 - Voltar")
+        print(f"\nPARTE II — BUSCA EM DOCUMENTOS — {len(mecanismo.documentos)} arquivos carregados")
+        print("1 - Encontrar arquivos que contêm uma palavra\n2 - Encontrar palavras pelo começo e seus arquivos\n3 - Ver arquivos carregados\n4 - Ver contagens e tempos de processamento\n5 - Voltar ao menu principal")
         opcao = input("Escolha: ").strip()
         if opcao == "5":
             return
@@ -101,12 +114,15 @@ def menu_documentos(mecanismo: MecanismoBusca, stopwords: set[str]) -> None:
             mostrar_estatisticas(mecanismo)
         elif opcao in {"1", "2"}:
             # Prefixos podem coincidir com stopwords: 'de' ainda encontra 'desenvolvimento'.
-            termo = ler_termo("Digite a palavra ou prefixo: ", stopwords if opcao == "1" else None)
+            mensagem = ("Digite a palavra inteira que deseja encontrar nos textos: " if opcao == "1"
+                        else "Digite o começo da palavra (prefixo), por exemplo comp: ")
+            termo = ler_termo(mensagem, stopwords if opcao == "1" else None)
             if termo is None:
                 continue
+            contador = ContadorPassos()
             inicio = perf_counter()
-            resultado = (mecanismo.buscar_palavra(termo) if opcao == "1"
-                         else mecanismo.buscar_prefixo(termo))
+            resultado = (mecanismo.buscar_palavra(termo, contador) if opcao == "1"
+                         else mecanismo.buscar_prefixo(termo, contador))
             fim = perf_counter()
             if not resultado:
                 print("Nenhum resultado encontrado.")
@@ -115,10 +131,10 @@ def menu_documentos(mecanismo: MecanismoBusca, stopwords: set[str]) -> None:
                 for nome in resultado:
                     print(f"- {nome}")
             else:
-                print(f"Termos encontrados: {len(resultado)}")
+                print(f"Palavras dos textos que começam com '{termo}': {len(resultado)}")
                 for palavra, arquivos in resultado.items():
                     print(f"- {palavra}: {', '.join(arquivos)}")
-            mostrar_tempo(inicio, fim)
+            mostrar_medicao(inicio, fim, contador)
         else:
             print("Opção inválida.")
 
@@ -137,7 +153,7 @@ def main() -> int:
         print("Nenhum documento processado. Adicione arquivos UTF-8 em documentos/ e reinicie.")
     while True:
         print("\nTRABALHO A1 — CAIO E MARIA")
-        print("1 - Autocomplete (Parte I)\n2 - Busca em documentos (Parte II)\n3 - Sair")
+        print("1 - Parte I: demonstração de autocomplete\n2 - Parte II: pesquisa nos documentos\n3 - Encerrar o programa")
         opcao = input("Escolha: ").strip()
         if opcao == "1":
             menu_autocomplete(trie)
