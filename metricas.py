@@ -1,5 +1,3 @@
-"""Contagem explícita de operações selecionadas; não conta instruções do Python."""
-
 from dataclasses import dataclass, field
 from functools import cmp_to_key
 from typing import Iterable

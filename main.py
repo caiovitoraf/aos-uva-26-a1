@@ -44,8 +44,6 @@ def mostrar_medicao(inicio: float, fim: float, contador: ContadorPassos, operaca
 
 
 def menu_autocomplete(trie: Trie) -> None:
-    print("\nAqui você testa sugestões usando um cadastro próprio de palavras.")
-    print("Novas palavras ficam neste cadastro durante a sessão; elas não alteram os textos.")
     while True:
         print(f"\nPARTE I — DEMONSTRAÇÃO DE AUTOCOMPLETE — {trie.quantidade_palavras} palavras cadastradas")
         print("1 - Verificar se uma palavra está cadastrada\n2 - Ver sugestões pelo começo da palavra\n3 - Cadastrar palavra para testar o autocomplete\n4 - Voltar ao menu principal")
