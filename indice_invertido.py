@@ -1,9 +1,6 @@
-"""Leitura dos documentos e integração entre vocabulário, Trie e Hash."""
-
 from dataclasses import dataclass
 from pathlib import Path
 from time import perf_counter
-
 from metricas import ContadorPassos, ordenar_com_passos
 from preprocessamento import preprocessar
 from trie import Trie
@@ -52,12 +49,10 @@ class MecanismoBusca:
             mecanismo.documentos.append(Documento(arquivo.name, len(tokens), len(filtrados)))
 
             inicio = perf_counter()
-            # Set elimina repetições no mesmo documento; dict localiza o termo.
             for termo in set(filtrados):
                 mecanismo.indice.setdefault(termo, set()).add(arquivo.name)
             mecanismo.tempo_indice += perf_counter() - inicio
 
-        # As chaves distintas do índice constituem o vocabulário.
         inicio = perf_counter()
         for termo in mecanismo.indice:
             mecanismo.trie.inserir(termo)

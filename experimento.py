@@ -1,5 +1,3 @@
-"""Gera medições repetíveis e exemplos reais para o relatório, em JSON."""
-
 import argparse
 import hashlib
 import json

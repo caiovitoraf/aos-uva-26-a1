@@ -1,8 +1,5 @@
-"""Normalização Unicode, tokenização e remoção de stopwords."""
-
 from pathlib import Path
 import unicodedata
-
 
 def tokenizar(texto: str) -> list[str]:
     """Preserva letras, números e marcas Unicode; separa pontuação e símbolos."""

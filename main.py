@@ -1,5 +1,3 @@
-"""Interface de terminal das duas partes do trabalho. Execute: python main.py."""
-
 from pathlib import Path
 from time import perf_counter
 
@@ -10,14 +8,12 @@ from trie import Trie
 
 RAIZ = Path(__file__).resolve().parent
 
-
 def ler_termo(mensagem: str, stopwords: set[str] | None = None) -> str | None:
     try:
         return normalizar_termo(input(mensagem), stopwords)
     except ValueError as erro:
         print(erro)
         return None
-
 
 def carregar_autocomplete(caminho: Path) -> tuple[Trie, list[str]]:
     trie = Trie()
@@ -35,13 +31,11 @@ def carregar_autocomplete(caminho: Path) -> tuple[Trie, list[str]]:
             avisos.append(f"Palavra inicial ignorada na linha {numero}: {linha}")
     return trie, avisos
 
-
 def mostrar_medicao(inicio: float, fim: float, contador: ContadorPassos, operacao: str = "consulta") -> None:
     print(f"Tempo da {operacao}: {(fim - inicio) * 1000:.6f} ms")
     print(f"Passos contados (operações selecionadas): {contador.total}")
     for etapa, quantidade in contador.etapas.items():
         print(f"  - {etapa}: {quantidade}")
-
 
 def menu_autocomplete(trie: Trie) -> None:
     while True:
@@ -80,7 +74,6 @@ def menu_autocomplete(trie: Trie) -> None:
             print("Palavra inserida no cadastro desta sessão." if resultado else "A palavra já estava cadastrada.")
         mostrar_medicao(inicio, fim, contador, "inserção" if opcao == "3" else "consulta")
 
-
 def mostrar_estatisticas(mecanismo: MecanismoBusca) -> None:
     e = mecanismo.estatisticas()
     print(f"Documentos processados: {e['documentos']}")
@@ -93,10 +86,7 @@ def mostrar_estatisticas(mecanismo: MecanismoBusca) -> None:
                         ("tempo_indice_s", "Construção do índice invertido")]:
         print(f"{nome}: {e[chave] * 1000:.6f} ms")
 
-
 def menu_documentos(mecanismo: MecanismoBusca, stopwords: set[str]) -> None:
-    print("\nAqui você pesquisa as palavras extraídas dos arquivos da pasta documentos/.")
-    print("Cada resultado mostra os arquivos em que a palavra aparece.")
     while True:
         print(f"\nPARTE II — BUSCA EM DOCUMENTOS — {len(mecanismo.documentos)} arquivos carregados")
         print("1 - Encontrar arquivos que contêm uma palavra\n2 - Encontrar palavras pelo começo e seus arquivos\n3 - Ver arquivos carregados\n4 - Ver contagens e tempos de processamento\n5 - Voltar ao menu principal")
@@ -136,7 +126,6 @@ def menu_documentos(mecanismo: MecanismoBusca, stopwords: set[str]) -> None:
         else:
             print("Opção inválida.")
 
-
 def main() -> int:
     try:
         stopwords = carregar_stopwords(RAIZ / "stopwords.txt")
@@ -150,7 +139,6 @@ def main() -> int:
     if not mecanismo.documentos:
         print("Nenhum documento processado. Adicione arquivos UTF-8 em documentos/ e reinicie.")
     while True:
-        print("\nTRABALHO A1 — CAIO E MARIA")
         print("1 - Parte I: demonstração de autocomplete\n2 - Parte II: pesquisa nos documentos\n3 - Encerrar o programa")
         opcao = input("Escolha: ").strip()
         if opcao == "1":
@@ -162,7 +150,6 @@ def main() -> int:
             return 0
         else:
             print("Opção inválida.")
-
 
 if __name__ == "__main__":
     try:
