@@ -1,5 +1,3 @@
-"""Trie implementada sem bibliotecas externas, compartilhada pelas duas partes."""
-
 from dataclasses import dataclass, field
 
 from metricas import ContadorPassos, ordenar_com_passos
@@ -66,7 +64,6 @@ class Trie:
         palavras = [prefixo] if no.fim_palavra else []
         if palavras and contador is not None:
             contador.contar("Palavras recuperadas")
-            # O prefixo já existe como string; não precisa ser copiado aqui.
         caminho = list(prefixo)
         # DFS iterativa: cada aresta é visitada uma vez. Evita limite de recursão
         # e evita copiar a string inteira em cada nó intermediário.
